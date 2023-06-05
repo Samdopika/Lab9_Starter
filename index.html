@@ -102,6 +102,76 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    errorBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        switch (index) {
+            case 0:
+                console.log("Console Log Demo");
+                break;
+            case 1:
+                console.error("Console Error Demo");
+                break;
+            case 2:
+                console.count("Console Count Demo");
+                break;
+            case 3:
+                console.warn("Console Warn Demo");
+                break;
+            case 4:
+                console.assert(false, "Console Assert Demo");
+                break;
+            case 5:
+                console.clear();
+                break;
+            case 6:
+                console.dir(btn);  // btn object will be displayed in the console
+                break;
+            case 7:
+                console.dirxml(document.body);  // dirxml of body tag will be displayed
+                break;
+            case 8:
+                console.group("Console Group Start");
+                console.log("Inside Group");
+                console.groupEnd();
+                break;
+            case 9:
+                console.table({name: "John", age: 30});
+                break;
+            case 10:
+                console.time("Start Timer");
+                break;
+            case 11:
+                console.timeEnd("Start Timer");
+                break;
+            case 12:
+                console.trace("Console Trace");
+                break;
+            case 13:
+                throw new Error("Trigger a Global Error");
+                break;
+            default:
+                console.log("Unassigned button");
+        }
+    });
+});
+
+window.onerror = function(message, url, lineNo){
+    console.log('Error: ' + message + '\n' + 'URL: ' + url + '\n' + 'Line Number: ' + lineNo);
+    return true;
+}
+
+try {
+    let output = document.querySelector('output');
+    let firstNum = document.querySelector('#first-num').value;
+    let secondNum = document.querySelector('#second-num').value;
+    let operator = document.querySelector('#operator').value;
+    output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+} catch (e) {
+    console.error("An error occurred during the calculation.", e);
+} finally {
+    console.log("Calculation attempted");
+}
+
   </script>
 </body>
 
