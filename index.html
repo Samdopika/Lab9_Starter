@@ -165,10 +165,11 @@
     });
 });
 
-window.onerror = function(message, url, lineNo){
-    console.log('Error: ' + message + '\n' + 'URL: ' + url + '\n' + 'Line Number: ' + lineNo);
-    return true;
-}
+
+window.addEventListener("error", (e)=>{
+        output.textContent = `${output.textContent}${e.type}: ERROR, Not valid input!\n`;
+        console.log(e);
+      });
 
 try {
     let output = document.querySelector('output');
