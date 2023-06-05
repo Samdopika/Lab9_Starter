@@ -132,21 +132,23 @@
             case 8:
                 console.group("Console Group Start");
                 console.log("Inside Group");
-                console.groupEnd();
                 break;
             case 9:
-                console.table({name: "John", age: 30});
+                console.groupEnd();
                 break;
             case 10:
-                console.time("Start Timer");
+                console.table({name: "John", age: 30},{name: "Amit", age: 19},{name: "Jack", age: 22},{name: "Saman", age: 21});
                 break;
             case 11:
-                console.timeEnd("Start Timer");
+                console.time("Start Timer");
                 break;
             case 12:
-                console.trace("Console Trace");
+                console.timeEnd("Start Timer");
                 break;
             case 13:
+                console.trace("Console Trace");
+                break;
+            case 14:
                 throw new Error("Trigger a Global Error");
                 break;
             default:
